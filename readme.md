@@ -12,7 +12,7 @@
 
 - Add all the projects to the solution
     - dotnet sln add ./MovieRatingsLib/MovieRatingsLib.csproj
-    - dotnet sln add ./MovieRatings.Console/MovieRatingsConsole.csproj
+    - dotnet sln add ./MovieRatingsConsole/MovieRatingsConsole.csproj
     - dotnet sln add ./MovieRatingsTests/MovieRatingsTests.csproj
     - dotnet sln add ./MovieRatingsListDB/MovieRatingsListDB.csproj
 

@@ -2,7 +2,7 @@
 
 namespace MovieRatingsLib
 {
-    public class Rating
+    class Rating
     {
         public DateTime RatingDate { get; }
         public int  Value { get; }

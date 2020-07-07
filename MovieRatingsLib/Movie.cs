@@ -10,18 +10,18 @@ namespace MovieRatingsLib
         public string Director { get; }
         public int Year { get; }
         public List<string> Genres { get; }
-        public List<Rating> Ratings {get;}
+        List<Rating> _ratings;
 
         public double AverageRating {
             get {
-                if (Ratings.Count == 0) {
+                if (_ratings.Count == 0) {
                     return 0;
                 }
                 double sum = 0;
-                foreach (var rating in Ratings) {
+                foreach (var rating in _ratings) {
                     sum += rating.Value;
                 }
-                return Math.Round(sum / Ratings.Count, 2);
+                return Math.Round(sum / _ratings.Count, 2);
             }
         }
 
@@ -35,11 +35,11 @@ namespace MovieRatingsLib
             Director = director;
             Year = year;
             Genres = genres; // should copy...
-            Ratings = new List<Rating>();
+            _ratings = new List<Rating>();
         }
 
         internal void Rate(Rating rating) {
-            Ratings.Add(rating);
+            _ratings.Add(rating);
         }
 
         public override string ToString() {
