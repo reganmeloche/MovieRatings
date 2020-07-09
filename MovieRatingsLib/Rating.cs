@@ -19,5 +19,12 @@ namespace MovieRatingsLib
             Username = username;
             Review = review;
         }
+
+        public Rating(Rating rating) {
+            RatingDate = rating.RatingDate;
+            Value = rating.Value;
+            Review = rating.Review;
+            Username = rating.Username;
+        }
     }
 }

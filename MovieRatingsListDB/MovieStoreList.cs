@@ -22,7 +22,16 @@ namespace MovieRatingsListDB
         }
 
         public List<Movie> GetAll() {
-            return _movieList; // TODO: Should send a copy...
+            var originalList = _movieList;
+            var newList = new List<Movie>();
+            foreach (var movie in originalList) {
+                var movieCopy = new Movie(movie);
+                newList.Add(movieCopy);
+            }
+            return newList;
+            // Need to return a copy!
+            // Requires copy constructors
+            // Old way: return _movieList;
         }
     }
 }

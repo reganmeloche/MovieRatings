@@ -38,6 +38,20 @@ namespace MovieRatingsLib
             _ratings = new List<Rating>();
         }
 
+        // Copy constructor
+        public Movie(Movie movie) {
+            Id = movie.Id;
+            Title = movie.Title;
+            Director = movie.Director;
+            Year = movie.Year;
+            Genres = movie.Genres;
+            _ratings = new List<Rating>();
+
+            foreach (var rating in movie._ratings) {
+                _ratings.Add(new Rating(rating));
+            }
+        }
+
         internal void Rate(Rating rating) {
             _ratings.Add(rating);
         }
