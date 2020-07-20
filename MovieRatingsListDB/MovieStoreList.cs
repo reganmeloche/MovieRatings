@@ -29,9 +29,15 @@ namespace MovieRatingsListDB
                 newList.Add(movieCopy);
             }
             return newList;
-            // Need to return a copy!
-            // Requires copy constructors
+            
             // Old way: return _movieList;
+        }
+
+        public void Remove(Guid id) {
+            var movieToDelete = _movieList.Find(x => x.Id == id);
+            if (movieToDelete != null) {
+                _movieList.Remove(movieToDelete);
+            }
         }
     }
 }

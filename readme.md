@@ -9,15 +9,18 @@
     - dotnet new xunit -o MovieRatingsTests
     - dotnet new console -o MovieRatingsConsole
     - dotnet new classlib -o MovieRatingsListDB
+    - dotnet new webapi -o MovieRatingsWeb
 
 - Add all the projects to the solution
     - dotnet sln add ./MovieRatingsLib/MovieRatingsLib.csproj
     - dotnet sln add ./MovieRatingsConsole/MovieRatingsConsole.csproj
     - dotnet sln add ./MovieRatingsTests/MovieRatingsTests.csproj
     - dotnet sln add ./MovieRatingsListDB/MovieRatingsListDB.csproj
+    - dotnet sln add ./MovieRatingsWeb/MovieRatingsWeb.csproj
 
 - Add the proper dependencies:
     - Console: Lib, ListDB
+    - WebApi: Lib, ListDB
     - Tests: Lib
     - ListDB: Lib
     - Lib: Nothing
@@ -29,6 +32,8 @@
 ### Lib
 
 ### Console
+
+### WebApi
 
 ### Tests
 
@@ -42,4 +47,7 @@
     - change console to integratedTerminal
 - Start Debugging > .NET Core. Creates tasks.json as well
 - Now we can debug. Add breakpoints to step through the code
+
+## Running
+- To run an executable project: `dotnet run --project ./MovieRatingsConsole/MovieRatingsConsole.csproj`
 

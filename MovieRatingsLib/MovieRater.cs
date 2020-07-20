@@ -17,6 +17,10 @@ namespace MovieRatingsLib
             return newMovie;
         }
 
+        public void DeleteMovie(Guid id) {
+            _movieStorage.Remove(id);
+        }
+
         public void RateMovie(Guid movieId, int value, string review, string username) {
             // TODO: Validation: prevent same user from two ratings. Or overwrite?
 
